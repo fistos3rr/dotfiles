@@ -1,0 +1,7 @@
+shell /usr/bin/fish
+
+
+# BEGIN_KITTY_THEME
+# Gruvbox Material Dark Soft
+include current-theme.conf
+# END_KITTY_THEME
