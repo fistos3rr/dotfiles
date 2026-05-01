@@ -13,6 +13,8 @@ set cursorline " highlight cursor line
 
 colorscheme delek " default colorscheme
 
+set clipboard=unnamedplus " systemclipboard on linux
+
 " Tabs
 set shiftwidth=4
 set tabstop=4
@@ -56,6 +58,8 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+" clipboard 
 
 " Resize split windows using arrow keys by pressing:
 " CTRL+UP, CTRL+DOWN, CTRL+LEFT, or CTRL+RIGHT.
