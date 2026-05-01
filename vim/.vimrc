@@ -39,7 +39,7 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.img,*.xlsx
 call plug#begin('~/.vim/plugged')
 
     Plug 'dense-analysis/ale' " async lint engine
-
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'preservim/nerdtree' " NERDTree 
 
 call plug#end()
@@ -59,6 +59,10 @@ noremap <c-down> <c-w>-
 noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
 
+" pyright
+inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<Tab>"
+inoremap <silent><expr> <CR> "\<C-g>u\<CR>"
+
 " NERDTree specific mappings.
 " Map the F3 key to toggle NERDTree open and close.
 nnoremap <F3> :NERDTreeToggle<cr>
@@ -68,5 +72,5 @@ set statusline=
 set statusline+=\ %F\ %M\ %Y\ %R " status line on left side
 set statusline+=%= " use divider to separate the left side from the right side
 " status line right side
-set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
+set statusline+=\ r:\ %l\ c:\ %c\ \ %p%%
 set laststatus=2 " show the status on the second to last line
