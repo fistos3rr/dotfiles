@@ -16,7 +16,12 @@ colorscheme delek " default colorscheme
 " Tabs
 set shiftwidth=4
 set tabstop=4
+set softtabstop=4
 set expandtab
+
+" filetype specific tabs
+autocmd FileType javascript,typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType javascript,typescript setlocal expandtab
 
 set scrolloff=10
 
@@ -38,7 +43,7 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.img,*.xlsx
 " PLUGINS --------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
-    Plug 'dense-analysis/ale' " async lint engine
+"    Plug 'dense-analysis/ale' " async lint engine
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'preservim/nerdtree' " NERDTree 
 
