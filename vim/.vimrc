@@ -13,7 +13,8 @@ set cursorline " highlight cursor line
 
 colorscheme habamax " default colorscheme
 
-set clipboard=unnamedplus " systemclipboard on linux
+set clipboard^=unnamedplus " systemclipboard on linux
+set mouse=a
 
 " Tabs
 set shiftwidth=4
@@ -52,6 +53,8 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " MAPPINGS ------------------------------------------------------------------
+let mapleader = "\<Space>"
+
 " You can split the window in Vim by typing :split or :vsplit.
 " Navigate the split view easier by pressing CTRL+j, CTRL+k, CTRL+h, or CTRL+l.
 nnoremap <c-j> <c-w>j
@@ -60,6 +63,10 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " clipboard 
+nnoremap <Leader>p "+p
+xnoremap <Leader>p "+p
+nnoremap <Leader>y "+y
+xnoremap <Leader>y "+y
 
 " Resize split windows using arrow keys by pressing:
 " CTRL+UP, CTRL+DOWN, CTRL+LEFT, or CTRL+RIGHT.
