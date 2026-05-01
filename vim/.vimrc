@@ -48,7 +48,7 @@ call plug#begin('~/.vim/plugged')
 "    Plug 'dense-analysis/ale' " async lint engine
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'preservim/nerdtree' " NERDTree 
-
+    Plug 'powerman/vim-plugin-ruscmd' " russian language support in commands
 call plug#end()
 
 " MAPPINGS ------------------------------------------------------------------
