@@ -13,7 +13,7 @@ set cursorline " highlight cursor line
 
 colorscheme habamax " default colorscheme
 
-set clipboard^=unnamedplus " systemclipboard on linux
+set clipboard=unnamedplus " systemclipboard on linux
 set mouse=a
 
 " Tabs
@@ -50,6 +50,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'preservim/nerdtree' " NERDTree 
     Plug 'powerman/vim-plugin-ruscmd' " russian language support in commands
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'Vimjas/vim-python-pep8-indent'
+
 call plug#end()
 
 " MAPPINGS ------------------------------------------------------------------

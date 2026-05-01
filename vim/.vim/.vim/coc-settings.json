@@ -1,4 +1,7 @@
 {
     "signature.target": "echo",
-    "suggest.floatEnable": false
+    "suggest.floatEnable": false,
+    "pyright.inlayHints.variableTypes": false,
+    "pyright.inlayHints.functionReturnTypes": false,
+    "pyright.inlayHints.parameterTypes": false
 }
