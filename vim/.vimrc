@@ -11,7 +11,7 @@ set relativenumber " add numbers
 
 set cursorline " highlight cursor line
 
-colorscheme delek " default colorscheme
+colorscheme habamax " default colorscheme
 
 set clipboard=unnamedplus " systemclipboard on linux
 
@@ -78,8 +78,8 @@ nnoremap <F3> :NERDTreeToggle<cr>
 
 " STATUS LINE ----------------------------------------------------------------
 set statusline=
-set statusline+=\ %F\ %M\ %Y\ %R " status line on left side
+set statusline+=\ %f\ %M\ %y\ %R " status line on left side
 set statusline+=%= " use divider to separate the left side from the right side
 " status line right side
-set statusline+=\ r:\ %l\ c:\ %c\ \ %p%%
+set statusline+=\ (%l,%c)  
 set laststatus=2 " show the status on the second to last line
