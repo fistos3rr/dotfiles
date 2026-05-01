@@ -23,8 +23,8 @@ set softtabstop=4
 set expandtab
 
 " filetype specific tabs
-autocmd FileType javascript,typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd FileType javascript,typescript setlocal expandtab
+autocmd FileType javascript,typescript,html setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType javascript,typescript,html setlocal expandtab
 
 set scrolloff=10
 
