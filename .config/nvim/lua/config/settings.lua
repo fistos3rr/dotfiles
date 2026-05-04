@@ -1,7 +1,7 @@
 vim.cmd("language en_US")
 
 --vim.opt.clipboard = 'unnamedplus' -- clipboard
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+vim.opt.completeopt = {'menu', 'menuone'}
 vim.opt.mouse = 'a'
 
 vim.opt.tabstop = 4
