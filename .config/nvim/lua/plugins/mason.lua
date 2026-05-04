@@ -17,6 +17,7 @@ return {
                 "ts_ls",
                 "pyright",
                 "tailwindcss",
+                "djls",
             },
         })
 
@@ -28,6 +29,7 @@ return {
                 "black",
                 "pylint",
                 "eslint_d",
+                "djls",
             },
         })
     end,

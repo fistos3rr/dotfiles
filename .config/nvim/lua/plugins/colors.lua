@@ -37,9 +37,9 @@ return {
 				disable_background = true,
 			})
 
-			--vim.cmd("colorscheme rose-pine")
+			vim.cmd("colorscheme rose-pine")
 
-			--ColorMyPencils()
+			ColorMyPencils()
 		end,
 	},
 
@@ -56,7 +56,7 @@ return {
 				},
 			})
 
-			vim.cmd("colorscheme gruvbox")
+			--vim.cmd("colorscheme gruvbox")
 		end,
 	},
 }
