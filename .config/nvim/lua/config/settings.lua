@@ -1,6 +1,4 @@
-vim.cmd("language en_US")
-
---vim.opt.clipboard = 'unnamedplus' -- clipboard
+vim.opt.clipboard = 'unnamedplus' -- clipboard
 vim.opt.completeopt = {'menu', 'menuone'}
 vim.opt.mouse = 'a'
 

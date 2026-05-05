@@ -26,3 +26,7 @@ vim.keymap.set('n', '<C-right>', ':vertical resize +2<CR>', opts)
 
 -- Neo tree
 vim.keymap.set("n", "<F3>", "<CMD>Neotree toggle<CR>")
+
+-- Visual Mode ------------------------------------------
+vim.keymap.set('n', '<leader>y', '"+y', opts)
+vim.keymap.set('n', '<leader>p', '"+p', opts)

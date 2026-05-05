@@ -15,9 +15,8 @@ return {
                 "html",
                 "jsonls",
                 "ts_ls",
-                "pyright",
                 "tailwindcss",
-                "djls",
+                "ty"
             },
         })
 
@@ -29,7 +28,7 @@ return {
                 "black",
                 "pylint",
                 "eslint_d",
-                "djls",
+                "ty"
             },
         })
     end,

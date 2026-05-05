@@ -32,8 +32,14 @@ return {
                     capabilities = capabilities,
                 })
             end,
-            ["djls"] = function()
-                nvim_lsp["djls"].setup({
+--            ["djls"] = function()
+--                nvim_lsp["djls"].setup({
+--                    on_attach = on_attach,
+--                    capabilities = capabilities,
+--                })
+--            end,
+            ["ty"] = function()
+                nvim_lsp["ty"].setup({
                     on_attach = on_attach,
                     capabilities = capabilities,
                 })
@@ -74,12 +80,12 @@ return {
                     capabilities = capabilities,
                 })
             end,
-            ["pyright"] = function()
-                nvim_lsp["pyright"].setup({
-                    on_attach = on_attach,
-                    capabilities = capabilities,
-                })
-            end,
+--            ["pyright"] = function()
+--                nvim_lsp["pyright"].setup({
+--                    on_attach = on_attach,
+--                    capabilities = capabilities,
+--                })
+--            end,
         })
     end,
 }
