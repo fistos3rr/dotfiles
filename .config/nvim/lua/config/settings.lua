@@ -20,3 +20,13 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+--pythonindent
+vim.g.python_indent = {
+    disable_parentheses_indenting = false,
+    closed_paren_align_last_line = false,
+    searchpair_timeout = 150,
+    continue = vim.opt.shiftwidth,
+    open_paren = vim.opt.shiftwidth,
+    nested_paren = vim.opt.shiftwidth
+}
