@@ -28,7 +28,8 @@ return {
                 "black",
                 "pylint",
                 "eslint_d",
-                "ty"
+                "ty",
+                "ruff"
             },
         })
     end,
