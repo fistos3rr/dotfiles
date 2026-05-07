@@ -1,3 +1,5 @@
+vim.cmd("language en_US")
+
 vim.opt.clipboard = 'unnamedplus' -- clipboard
 vim.opt.completeopt = {'menu', 'menuone'}
 vim.opt.mouse = 'a'
@@ -6,6 +8,8 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+vim.opt.smartindent = true
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -28,3 +32,13 @@ vim.g.python_indent = {
     open_paren = vim.opt.shiftwidth,
     nested_paren = vim.opt.shiftwidth
 }
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
+    callback = function()
+        vim.opt_local.expandtab = true
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.tabstop = 2
+        vim.opt_local.softtabstop = 2
+    end,
+})
