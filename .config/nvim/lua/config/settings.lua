@@ -2,9 +2,6 @@ vim.cmd("language en_US")
 
 --vim.opt.clipboard = 'unnamedplus' -- clipboard
 
--- auto complete
-vim.opt.completeopt = { "menuone", "noselect", "popup" }
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -12,10 +9,10 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
-
 vim.opt.smartindent = true
+vim.opt.autoindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = false -- dont wrap lines
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -25,10 +22,22 @@ vim.opt.undofile = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.termguicolors = true
+vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 8
 
-vim.opt.scrolloff = 8
+-- visual
+vim.opt.cursorline = true
+vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
+vim.opt.showmatch = true
+vim.opt.matchtime = 2
+vim.opt.pumheight = 10 -- popup menu height
+vim.opt.pumblend = 10 -- popup menu transparency
+vim.opt.winblend = 0 -- floating window transparency
+vim.opt.completeopt = "menu,menuone,noselect"
+vim.opt.synmaxcol = 300 -- syntax highlighting limit (optimizatoin?)
+
+
 
 vim.opt.updatetime = 300
 

@@ -8,14 +8,6 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 
--- auto pairs no plugins
-map("i", "`", "``<left>")
-map("i", '"', '""<left>')
-map("i", "(", "()<left>")
-map("i", "[", "[]<left>")
-map("i", "{", "{}<left>")
-map("i", "<", "<><left>") 
-
 -- diagnostic keymaps
 local diagnostic_goto = function(next, severity)
     severity = severity and vim.diagnostic.severity[severity] or nil
