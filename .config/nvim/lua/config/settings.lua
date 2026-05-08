@@ -1,6 +1,6 @@
 vim.cmd("language en_US")
 
-vim.opt.clipboard = 'unnamedplus' -- clipboard
+--vim.opt.clipboard = 'unnamedplus' -- clipboard
 
 -- auto complete
 vim.opt.completeopt = { "menuone", "noselect", "popup" }
