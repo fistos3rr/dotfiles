@@ -1,0 +1,52 @@
+require('mason').setup()
+
+-- use this to install tools
+require('mason-tool-installer').setup({
+	ensure_installed = {
+		'lua_ls',
+        'ts_ls',
+        --'ty'
+	},
+})
+
+vim.lsp.config('lua_ls', {
+    cmd = { 'lua-language-server' },
+    filetypes = { 'lua' },
+    settings = {
+        Lua = {
+            diagnostics = { globals = { 'vim' } },
+            workspace = {
+                checkThirdParty = false,
+                library = {
+                    vim.env.VIMRUNTIME,
+                },
+            },
+            telemetry = { enable = false },
+        },
+    },
+})
+
+vim.lsp.config('ts_ls', {
+    settings = {
+        typescript = {
+            inlayHints = {
+                includeInlayParameterNameHints = 'all',
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayVariableTypeHints = true,
+            },
+        },
+        javascript = {
+            inlayHints = {
+                includeInlayParameterNameHints = 'all',
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayVariableTypeHints = true,
+            },
+        },
+    },
+})
+
+require('mason-lspconfig').setup({})
+
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('ty')

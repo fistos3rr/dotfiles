@@ -37,5 +37,5 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
   -- disable luarocks if it is not available on system
-  rocks = { enabled = false },
+  -- rocks = { enabled = false },
 })
