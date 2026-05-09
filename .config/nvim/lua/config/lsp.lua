@@ -4,8 +4,8 @@ require('mason').setup()
 require('mason-tool-installer').setup({
 	ensure_installed = {
 		'lua_ls',
-        'ts_ls',
-        --'ty'
+    'ts_ls',
+    'ty'
 	},
 })
 
@@ -27,6 +27,8 @@ vim.lsp.config('lua_ls', {
 })
 
 vim.lsp.config('ts_ls', {
+    filetypes = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact' },
+    root_markers = { 'tsconfig.json', 'jsconfig.json', 'package.json' },
     settings = {
         typescript = {
             inlayHints = {

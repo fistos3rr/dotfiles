@@ -8,6 +8,10 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 
+-- tab switcher
+map("n", "<leader>l", ":tabn<CR>", opts)
+map("n", "<leader>h", ":tabp<CR>", opts)
+
 -- diagnostic keymaps
 local diagnostic_goto = function(next, severity)
     severity = severity and vim.diagnostic.severity[severity] or nil

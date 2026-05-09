@@ -1,6 +1,5 @@
-vim.cmd("language en_US")
-
---vim.opt.clipboard = 'unnamedplus' -- clipboard
+vim.opt.clipboard = 'unnamedplus' -- clipboard
+vim.opt.mouse = 'a'
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -36,7 +35,6 @@ vim.opt.pumblend = 10 -- popup menu transparency
 vim.opt.winblend = 0 -- floating window transparency
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.synmaxcol = 300 -- syntax highlighting limit (optimizatoin?)
-
 
 
 vim.opt.updatetime = 300
