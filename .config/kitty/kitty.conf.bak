@@ -1,7 +1,15 @@
-shell /usr/bin/fish
+# include theme
+include dark-theme.auto.conf 
 
 
-# BEGIN_KITTY_THEME
-# Gruvbox Material Dark Soft
-include current-theme.conf
-# END_KITTY_THEME
+# background image
+background_tint 0.9
+background_tint_gaps 1.0
+
+# BEGIN_KITTY_FONTS
+font_family      family="Fira Code"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS
+font_size        12.0
