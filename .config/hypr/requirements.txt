@@ -1,0 +1,7 @@
+waybar # status bar
+cliphist # clipboard
+adw-gtk-theme # dark theme
+kitty # terminal
+dolphin # file manager
+wofi # app runner
+

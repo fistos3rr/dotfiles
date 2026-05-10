@@ -1,0 +1,102 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "position": "top",
+    "height": 27, 
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/mode",
+        "hyprland/window"
+    ],
+    "modules-center": [
+
+    ],
+    "modules-right": [
+//        "network",
+        "temperature",
+        "backlight",
+        "pulseaudio",
+        "battery",
+        "hyprland/language",
+        "clock",
+        "tray"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "disable-markup": true,
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+    "hyprland/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "hyprland/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 150
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 15
+    },
+    "clock": {
+        "format": "{:%a %b %e  %R}",
+        "interval": 30
+    },
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+            "full": 99,
+            "good": 98,
+            "normal": 98,
+            "warning": 20,
+            "criticatl": 20
+        },
+        "format": "{icon}   {capacity}%",
+        "format-good": "{icon}   {capacity}%", 
+        "format-full": "   {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 30
+    },
+    "network": {
+        "interface": "eno1", 
+        "format-ethernet": "",
+        "format-wifi": "   WiFi-On",
+        "format-disconnected": " Disconnected",
+        "interval": 60
+    },
+
+    "temperature": {
+        "thermal-zone": 0,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons":[""],
+        "interval": 30
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}  {percent}%  ",
+        "format-icons": ["","","",""],
+        "interval": 60
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%  ",
+        "format-bluetooth": "  {volume}%  ",
+        "format-muted":"  Mute  ",
+        "interval": 60,
+
+        "format-icons": {
+        "default": [""]
+        }
+    }
+}
