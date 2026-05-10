@@ -17,9 +17,9 @@
         "temperature",
         "backlight",
         "pulseaudio",
-        "battery",
-        "hyprland/language",
+//        "battery",
         "clock",
+        "hyprland/language",
         "tray"
     ],
 
@@ -49,8 +49,13 @@
         "spacing": 15
     },
     "clock": {
-        "format": "{:%a %b %e  %R}",
-        "interval": 30
+        "format": "{:%I:%M %d/%m}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
+        "actions": {
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down",
+            "on-click": "shift_reset"   
+        }
     },
     "battery": {
         "bat": "BAT0",
@@ -84,15 +89,22 @@
 
     "backlight": {
         "device": "intel_backlight",
-        "format": "{icon}  {percent}%  ",
+        "format": "{icon} {percent}%  ",
         "format-icons": ["","","",""],
         "interval": 60
     },
 
+    "hyprland/language": {
+        "format": "{}",
+        "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+        "format-en": "ENG",
+        "format-ru": "RUS"
+    },
+
     "pulseaudio": {
-        "format": "{icon}  {volume}%  ",
-        "format-bluetooth": "  {volume}%  ",
-        "format-muted":"  Mute  ",
+        "format": "{icon} {volume}% ",
+        "format-bluetooth": "{volume}% ",
+        "format-muted":"{icon} Mute ",
         "interval": 60,
 
         "format-icons": {
