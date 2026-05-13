@@ -5,7 +5,8 @@ require('mason-tool-installer').setup({
 	ensure_installed = {
 		'lua_ls',
     'ts_ls',
-    'ty'
+    'ty',
+    'gopls'
 	},
 })
 
@@ -47,8 +48,21 @@ vim.lsp.config('ts_ls', {
     },
 })
 
+vim.lsp.config('gopls', {
+  settings = {
+    golsp = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+    },
+  },
+})
+
 require('mason-lspconfig').setup({})
 
 vim.lsp.enable('ts_ls')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('ty')
+vim.lsp.enable('gopls')
