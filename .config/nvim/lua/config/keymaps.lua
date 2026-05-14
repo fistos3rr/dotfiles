@@ -8,10 +8,17 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 
+-- telescope
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Fuzzy find recent files" })
+map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find string in cwd" })
+map("n", "<leader>fs", "<cmd>Telescope git_status<cr>", { desc = "Find string under cursor in cwd" })
+map("n", "<leader>fc", "<cmd>Telescope git commits<cr>", { desc = "Find todos" })
+
+
 -- lsp keymaps
 map("n", "<leader>k", vim.lsp.buf.hover, { desc = "Hover Documentation" })
 map("n", "gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
-
 
 -- diagnostic keymaps
 local diagnostic_goto = function(next, severity)

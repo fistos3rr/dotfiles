@@ -20,7 +20,7 @@ require("conform").setup({
     lsp_format = "fallback",
   },
 
-  vim.keymap.set({ "n", "v" }, "<leader>f", function()
+  vim.keymap.set({ "n", "v" }, "<leader>l", function()
     require("conform").format({ async = true }, function(err, did_edit)
       if not err and did_edit then
         vim.notify("Code formatted", vim.log.levels.INFO, { title = "Conform" })
