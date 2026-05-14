@@ -43,7 +43,7 @@ vim.diagnostic.config({
         spacing = 4,
         source = "if_many",
         prefix = "●",
-    }, 
+    },
 
     linehl = {
         [sev.ERROR] = "DiagnosticErrorLine",

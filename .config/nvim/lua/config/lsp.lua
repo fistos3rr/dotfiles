@@ -10,6 +10,21 @@ require('mason-tool-installer').setup({
 	},
 })
 
+require('mason-lspconfig').setup({})
+
+local function on_attach(client, bufnr)
+  if client.name == 'gopls' and not client.server_capabilities.semanticTokensProvider then
+    local semantic = client.config.capabilities.textDocument.semanticTokens
+    client.server_capabilities.semanticTokensProvider = {
+      full = true,
+      legend = {tokenModifiers = semantic.tokenModifiers, tokenTypes = semantic.tokenTypes},
+      range = true,
+    }
+  end
+end
+
+vim.highlight.priorities.semantic_tokens = 95
+
 vim.lsp.config('lua_ls', {
     cmd = { 'lua-language-server' },
     filetypes = { 'lua' },
@@ -49,18 +64,38 @@ vim.lsp.config('ts_ls', {
 })
 
 vim.lsp.config('gopls', {
+  cmd = { 'gopls' },
+  filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
+  on_attach = on_attach,
   settings = {
-    golsp = {
-      analyses = {
-        unusedparams = true,
-      },
-      staticcheck = true,
-      gofumpt = true,
-    },
-  },
+    gopls = {
+      semanticTokens = true,
+      hints = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                constantValues = true,
+                parameterNames = true,
+                rangeVariableTypes = true,
+            },
+            analyses = {
+                nilness = true,
+                unusedparams = true,
+            },
+            staticcheck = true,
+            gofumpt = true,
+            codelenses = {
+                gc_details = false,
+                generate = true,
+                tidy = true,
+                upgrade_dependency = true,
+                vendor = true,
+            },
+            usePlaceholders = true,
+            completeUnimported = true,
+    }
+  }
 })
 
-require('mason-lspconfig').setup({})
 
 vim.lsp.enable('ts_ls')
 vim.lsp.enable('lua_ls')

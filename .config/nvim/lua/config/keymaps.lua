@@ -8,9 +8,10 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 
--- tab switcher
-map("n", "<leader>l", ":tabn<CR>", opts)
-map("n", "<leader>h", ":tabp<CR>", opts)
+-- lsp keymaps
+map("n", "<leader>k", vim.lsp.buf.hover, { desc = "Hover Documentation" })
+map("n", "gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
+
 
 -- diagnostic keymaps
 local diagnostic_goto = function(next, severity)
