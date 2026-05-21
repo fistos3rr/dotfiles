@@ -6,7 +6,12 @@ vim.api.nvim_create_autocmd("InsertEnter", {
   once = true,
   callback = function()
     require("blink.cmp").setup({
-      keymap = { preset = "super-tab" },
+      keymap = {
+        preset = "super-tab",
+        ["<C-d>"] = { "show", "show_documentation", "hide_documentation" },
+        ["<C-f>"] = { "scroll_documentation_up", "fallback" },
+        ["<C-b>"] = { "scroll_documentation_down", "fallback" },
+      },
       appearance = {
         nerd_font_variant = "mono",
         use_nvim_cmp_as_default = true,
