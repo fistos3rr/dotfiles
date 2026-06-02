@@ -8,6 +8,32 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 
+-- tabline
+-- jump
+map("n", "<A-,>", "<Cmd>BufferPrevious<CR>", opts)
+map("n", "<A-.>", "<Cmd>BufferNext<CR>", opts)
+-- move buffers
+map("n", "<A-<>", "<Cmd>BufferMovePrevious<CR>", opts)
+map("n", "<A->>", "<Cmd>BufferMoveNext<CR>", opts)
+-- goto buffers
+map("n", "<A-1>", "<Cmd>BufferGoto 1<CR>", opts)
+map("n", "<A-2>", "<Cmd>BufferGoto 2<CR>", opts)
+map("n", "<A-3>", "<Cmd>BufferGoto 3<CR>", opts)
+map("n", "<A-4>", "<Cmd>BufferGoto 4<CR>", opts)
+map("n", "<A-5>", "<Cmd>BufferGoto 5<CR>", opts)
+map("n", "<A-6>", "<Cmd>BufferGoto 6<CR>", opts)
+map("n", "<A-7>", "<Cmd>BufferGoto 7<CR>", opts)
+map("n", "<A-8>", "<Cmd>BufferGoto 8<CR>", opts)
+map("n", "<A-9>", "<Cmd>BufferGoto 9<CR>", opts)
+map("n", "<A-0>", "<Cmd>BufferLast<CR>", opts)
+-- pin buffer
+map("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
+-- close buffer
+map("n", "<A-c>", "<Cmd>BufferClose<CR>", opts)
+-- restore buffer
+map("n", "<A-s-c>", "<Cmd>BufferRestore<CR>", opts)
+
+
 -- telescope
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
 map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Fuzzy find recent files" })
@@ -19,6 +45,7 @@ map("n", "<leader>fc", "<cmd>Telescope git commits<cr>", { desc = "Find todos" }
 -- lsp keymaps
 map("n", "<leader>k", vim.lsp.buf.hover, { desc = "Hover Documentation" })
 map("n", "gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: Code Action" })
 
 -- diagnostic keymaps
 local diagnostic_goto = function(next, severity)

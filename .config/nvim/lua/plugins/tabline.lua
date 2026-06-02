@@ -10,8 +10,7 @@ return {
     animation = true,
     icons = {
       button = '',
-      buffer_index = false,
-      buffer_number = true,
+      buffer_index = true,
       diagnostics = {
         [vim.diagnostic.severity.ERROR] = {enabled = true, icon = 'ﬀ'},
       },
