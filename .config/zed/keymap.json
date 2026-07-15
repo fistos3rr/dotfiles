@@ -10,6 +10,7 @@
     "context": "Workspace",
     "bindings": {
       // "shift shift": "file_finder::Toggle"
+      "space f f": "file_finder::Toggle",
     },
   },
   {
@@ -21,14 +22,16 @@
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      // "j k": "vim::NormalBefore"
+      "ctrl-e": "editor::ShowCompletions"
     },
   },
   {
     "context": "Editor && showing_completions",
     "bindings": {
       "enter": "editor::Newline",
-      "tab": "editor::ConfirmCompletion"
+      "tab": "editor::ConfirmCompletion",
+      "ctrl-e": "editor::Cancel",
+      "escape": "editor::Cancel",
     },
   },
   {
@@ -47,6 +50,7 @@
       "ctrl-j": "workspace::ActivatePaneDown",
       // LSP
       "space c a": "editor::ToggleCodeActions",
+      "space k": "editor::ShowSignatureHelp",
       // Next/prev error
       "] e": ["editor::GoToDiagnostic", { "severity": "error" }],
       "[ e": ["editor::GoToPreviousDiagnostic", { "severity": "error" }],

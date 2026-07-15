@@ -7,6 +7,24 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "buffer_search": {
+    "position": "bottom",
+    "style": "floating",
+  },
+  "status_bar": {
+    "show_active_file": true
+  },
+  "use_smartcase_search": true,
+  "ui_font_family": ".ZedSans",
+  "buffer_font_weight": 500.0,
+  "scrollbar": {
+    "show": "never"
+  },
+  "terminal": {
+    "scrollbar": {
+      "show": "auto"
+    }
+  },
   "relative_line_numbers": "enabled",
   "preview_tabs": {
     "enabled": true
@@ -31,6 +49,7 @@
     "button": true
   },
   "project_panel": {
+    "button": true,
     "starts_open": false,
     "git_status": true,
     "folder_icons": true,
@@ -39,7 +58,7 @@
   },
   "base_keymap": "VSCode",
   "cursor_blink": true,
-  "ui_font_weight": 400.0,
+  "ui_font_weight": 500.0,
   "buffer_font_family": "FiraCode Nerd Font",
   "telemetry": {
     "diagnostics": false,
@@ -47,11 +66,11 @@
     "anthropic_retention": false
   },
   "vim_mode": true,
-  "ui_font_size": 16.0,
-  "buffer_font_size": 15.0,
+  "ui_font_size": 17.0,
+  "buffer_font_size": 16.0,
   "theme": {
-    "mode": "system",
+    "mode": "light",
     "light": "Ayu Light",
-    "dark": "Ayu Dark",
+    "dark": "Rosé Pine",
   },
 }
