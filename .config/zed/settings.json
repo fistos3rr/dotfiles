@@ -69,7 +69,7 @@
   "ui_font_size": 17.0,
   "buffer_font_size": 16.0,
   "theme": {
-    "mode": "light",
+    "mode": "system",
     "light": "Ayu Light",
     "dark": "Rosé Pine",
   },

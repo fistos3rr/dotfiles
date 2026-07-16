@@ -77,7 +77,7 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-\\": "terminal_panel::ToggleFocus",
+      "F7": "terminal_panel::ToggleFocus",
     },
   },
   {
@@ -87,6 +87,11 @@
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",
       "ctrl-j": "workspace::ActivatePaneDown",
+      // Next/prev buffer
+      "alt-.": "pane::ActivateNextItem",
+      "alt-,": "pane::ActivatePreviousItem",
+      // Close active buffer
+      "alt-c": "pane::CloseActiveItem",
     },
   },
   // File panel (netrw)
