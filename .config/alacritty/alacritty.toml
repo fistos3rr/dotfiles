@@ -1,6 +1,6 @@
 [general]
 import = [
-    "~/.config/alacritty/themes/rose-pine.toml"
+    "~/.config/alacritty/themes/themes/moonfly.toml"
 ]
 
 [font]
@@ -17,4 +17,3 @@ style = "Bold"
 [font.italic]
 family = "FiraCode Nerd Font"
 style = "Italic"
-
