@@ -10,7 +10,7 @@
     "context": "Workspace",
     "bindings": {
       // "shift shift": "file_finder::Toggle"
-      "space f f": "file_finder::Toggle",
+      "alt f f": "file_finder::Toggle",
     },
   },
   {
@@ -31,7 +31,7 @@
       "enter": "editor::Newline",
       "tab": "editor::ConfirmCompletion",
       "ctrl-e": "editor::Cancel",
-      "escape": "editor::Cancel",
+      "escape": ["workspace::SendKeystrokes", "ctrl-e escape"],
     },
   },
   {
@@ -49,8 +49,8 @@
       "ctrl-k": "workspace::ActivatePaneUp",
       "ctrl-j": "workspace::ActivatePaneDown",
       // LSP
-      "space c a": "editor::ToggleCodeActions",
-      "space k": "editor::ShowSignatureHelp",
+      "alt c a": "editor::ToggleCodeActions",
+      "alt k": "editor::ShowSignatureHelp",
       // Next/prev error
       "] e": ["editor::GoToDiagnostic", { "severity": "error" }],
       "[ e": ["editor::GoToPreviousDiagnostic", { "severity": "error" }],
@@ -107,7 +107,7 @@
       "p": "project_panel::Paste",
       // Close project panel as project file panel on the right
       "q": "workspace::ToggleRightDock",
-      "space e": "workspace::ToggleRightDock",
+      "alt e": "workspace::ToggleRightDock",
       // Navigate between panel
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
