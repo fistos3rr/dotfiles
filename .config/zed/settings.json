@@ -21,6 +21,8 @@
     "show": "never"
   },
   "terminal": {
+    "dock": "bottom",
+    "show_count_badge": false,
     "scrollbar": {
       "show": "auto"
     }

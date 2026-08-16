@@ -63,6 +63,9 @@
       // Next/prev buffer
       "alt-.": "pane::ActivateNextItem",
       "alt-,": "pane::ActivatePreviousItem",
+      // Swap tabs
+      "alt->": "pane::SwapItemRight",
+      "alt-<": "pane::SwapItemLeft",
       // Close active buffer
       "alt-c": "pane::CloseActiveItem",
     },
@@ -77,7 +80,7 @@
   {
     "context": "Workspace",
     "bindings": {
-      "F7": "terminal_panel::ToggleFocus",
+      "F7": "workspace::NewCenterTerminal",
     },
   },
   {
@@ -92,6 +95,9 @@
       "alt-,": "pane::ActivatePreviousItem",
       // Close active buffer
       "alt-c": "pane::CloseActiveItem",
+      // Swap tabs
+      "alt->": "pane::SwapItemRight",
+      "alt-<": "pane::SwapItemLeft",
     },
   },
   // File panel (netrw)
