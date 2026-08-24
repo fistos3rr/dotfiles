@@ -93,3 +93,6 @@ set statusline+=%= " use divider to separate the left side from the right side
 " status line right side
 set statusline+=\ (%l,%c)  
 set laststatus=2 " show the status on the second to last line
+
+command! Sudow :execute ':w !sudo tee % > /dev/null' | :edit!
+command! Sudowq :execute ':w !sudo tee % > /dev/null' | :edit! | :q
