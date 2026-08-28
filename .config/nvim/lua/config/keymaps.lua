@@ -27,6 +27,7 @@ map("n", "<A-c>", ":tabc<CR>", opts)
 map("n", "<A-k>", ":bp<CR>", opts)
 map("n", "<A-j>", ":bn<CR>", opts)
 map("n", "<A-l>", ":ls<CR>", {noremap=true,})
+map("n", "<A-h>", ":bd<CR>", opts)
 
 -- tabline
 ---- jump
