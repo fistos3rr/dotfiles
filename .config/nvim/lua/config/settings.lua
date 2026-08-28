@@ -4,9 +4,9 @@ vim.opt.mouse = 'a'
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
@@ -45,9 +45,3 @@ vim.opt.colorcolumn = "80"
 vim.opt.redrawtime = 10000
 vim.opt.maxmempattern = 20000
 
--- python indent
-vim.g.python_indent = {
-    disable_parentheses_indenting = false,
-    closed_paren_align_last_line = false,
-    searchpair_timeout = 150,
-}

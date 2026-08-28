@@ -8,30 +8,50 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 
+-- Debugger
+local dap = require("dap")
+map("n", "<F5>", dap.continue, { desc = "Start/Continue debugging" })
+map("n", "<F10>", dap.step_over, { desc = "Step over" })
+map("n", "<F11>", dap.step_into, { desc = "Step into" })
+map("n", "<F12>", dap.step_out, { desc = "Step out" })
+map("n", "<leader>b", dap.toggle_breakpoint, { desc = "Breakpoint" })
+
+-- tabs
+map("n", "<A-,>", ":tabp<CR>", opts)
+map("n", "<A-.>", ":tabn<CR>", opts)
+map("n", "<A->>", ":tabmove +1<CR>", opts)
+map("n", "<A-<>", ":tabmove -1<CR>", opts)
+map("n", "<A-c>", ":tabc<CR>", opts)
+
+-- buffers
+map("n", "<A-k>", ":bp<CR>", opts)
+map("n", "<A-j>", ":bn<CR>", opts)
+map("n", "<A-l>", ":ls<CR>", {noremap=true,})
+
 -- tabline
--- jump
-map("n", "<A-,>", "<Cmd>BufferPrevious<CR>", opts)
-map("n", "<A-.>", "<Cmd>BufferNext<CR>", opts)
--- move buffers
-map("n", "<A-<>", "<Cmd>BufferMovePrevious<CR>", opts)
-map("n", "<A->>", "<Cmd>BufferMoveNext<CR>", opts)
--- goto buffers
-map("n", "<A-1>", "<Cmd>BufferGoto 1<CR>", opts)
-map("n", "<A-2>", "<Cmd>BufferGoto 2<CR>", opts)
-map("n", "<A-3>", "<Cmd>BufferGoto 3<CR>", opts)
-map("n", "<A-4>", "<Cmd>BufferGoto 4<CR>", opts)
-map("n", "<A-5>", "<Cmd>BufferGoto 5<CR>", opts)
-map("n", "<A-6>", "<Cmd>BufferGoto 6<CR>", opts)
-map("n", "<A-7>", "<Cmd>BufferGoto 7<CR>", opts)
-map("n", "<A-8>", "<Cmd>BufferGoto 8<CR>", opts)
-map("n", "<A-9>", "<Cmd>BufferGoto 9<CR>", opts)
-map("n", "<A-0>", "<Cmd>BufferLast<CR>", opts)
--- pin buffer
-map("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
--- close buffer
-map("n", "<A-c>", "<Cmd>BufferClose<CR>", opts)
--- restore buffer
-map("n", "<A-s-c>", "<Cmd>BufferRestore<CR>", opts)
+---- jump
+--map("n", "<A-,>", "<Cmd>BufferPrevious<CR>", opts)
+--map("n", "<A-.>", "<Cmd>BufferNext<CR>", opts)
+---- move buffers
+--map("n", "<A-<>", "<Cmd>BufferMovePrevious<CR>", opts)
+--map("n", "<A->>", "<Cmd>BufferMoveNext<CR>", opts)
+---- goto buffers
+--map("n", "<A-1>", "<Cmd>BufferGoto 1<CR>", opts)
+--map("n", "<A-2>", "<Cmd>BufferGoto 2<CR>", opts)
+--map("n", "<A-3>", "<Cmd>BufferGoto 3<CR>", opts)
+--map("n", "<A-4>", "<Cmd>BufferGoto 4<CR>", opts)
+--map("n", "<A-5>", "<Cmd>BufferGoto 5<CR>", opts)
+--map("n", "<A-6>", "<Cmd>BufferGoto 6<CR>", opts)
+--map("n", "<A-7>", "<Cmd>BufferGoto 7<CR>", opts)
+--map("n", "<A-8>", "<Cmd>BufferGoto 8<CR>", opts)
+--map("n", "<A-9>", "<Cmd>BufferGoto 9<CR>", opts)
+--map("n", "<A-0>", "<Cmd>BufferLast<CR>", opts)
+---- pin buffer
+--map("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
+---- close buffer
+--map("n", "<A-c>", "<Cmd>BufferClose<CR>", opts)
+---- restore buffer
+--map("n", "<A-s-c>", "<Cmd>BufferRestore<CR>", opts)
 
 
 -- telescope
