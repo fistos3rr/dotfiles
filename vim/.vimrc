@@ -3,6 +3,7 @@ set nocompatible
 filetype on " enable filetype detection
 filetype plugin on " enable plugins for detected filetype
 filetype indent on " load an indent file for the filetype
+set autoindent
 
 syntax on " syntax highlighing
 
@@ -11,10 +12,21 @@ set relativenumber " add numbers
 
 set cursorline " highlight cursor line
 
-colorscheme habamax " default colorscheme
+colorscheme delek " default colorscheme
 
 set clipboard=unnamedplus " systemclipboard on linux
 set mouse=a
+
+
+set completeopt=menuone,noinsert,preview
+set updatetime=300
+
+" Когда меню видимо:
+" <Tab>   – выбрать текущий вариант и вставить его (как <C-y>)
+" <CR>    – закрыть меню без выбора и затем вставить новую строку
+inoremap <expr> <Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
+inoremap <expr> <CR>  pumvisible() ? "\<C-e>\<CR>" : "\<CR>"
+set complete=.,w,b,u,t,i
 
 " Tabs
 set shiftwidth=4
@@ -25,6 +37,7 @@ set expandtab
 " filetype specific tabs
 autocmd FileType javascript,typescript,html setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType javascript,typescript,html setlocal expandtab
+autocmd FileType go setlocal noexpandtab    " Запрещаем замену табов на пробелы
 
 set scrolloff=10
 
@@ -47,12 +60,15 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.img,*.xlsx
 call plug#begin('~/.vim/plugged')
 
 "    Plug 'dense-analysis/ale' " async lint engine
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'preservim/nerdtree' " NERDTree 
     Plug 'powerman/vim-plugin-ruscmd' " russian language support in commands
     Plug 'jiangmiao/auto-pairs'
     Plug 'Vimjas/vim-python-pep8-indent'
-
+	
+	" fuzzy search
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " MAPPINGS ------------------------------------------------------------------
@@ -78,14 +94,6 @@ noremap <c-down> <c-w>-
 noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
 
-" pyright
-inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<Tab>"
-inoremap <silent><expr> <CR> "\<C-g>u\<CR>"
-
-" NERDTree specific mappings.
-" Map the F3 key to toggle NERDTree open and close.
-nnoremap <F3> :NERDTreeToggle<cr>
-
 " STATUS LINE ----------------------------------------------------------------
 set statusline=
 set statusline+=\ %f\ %M\ %y\ %R " status line on left side
@@ -94,5 +102,19 @@ set statusline+=%= " use divider to separate the left side from the right side
 set statusline+=\ (%l,%c)  
 set laststatus=2 " show the status on the second to last line
 
-command! Sudow :execute ':w !sudo tee % > /dev/null' | :edit!
-command! Sudowq :execute ':w !sudo tee % > /dev/null' | :edit! | :q
+" NERDTree specific mappings.
+" Map the F3 key to toggle NERDTree open and close.
+nnoremap <F3> :NERDTreeToggle<cr>
+
+set nowrap
+set listchars+=extends:›,precedes:‹
+set sidescrolloff=10
+set scrolloff=5
+
+nnoremap <M-,> :bp<CR>
+nnoremap <M-.> :bn<CR>
+nnoremap <M-c> :bd<CR>
+
+" FUZZY FINDER
+nnoremap <silent> <leader>ff :Files<CR>
+nnoremap <silent> <leader>fb :Buffers<CR>
