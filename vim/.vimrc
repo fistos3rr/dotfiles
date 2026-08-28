@@ -62,13 +62,9 @@ call plug#begin('~/.vim/plugged')
 "    Plug 'dense-analysis/ale' " async lint engine
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'preservim/nerdtree' " NERDTree 
-    Plug 'powerman/vim-plugin-ruscmd' " russian language support in commands
     Plug 'jiangmiao/auto-pairs'
     Plug 'Vimjas/vim-python-pep8-indent'
-	
-	" fuzzy search
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	Plug 'junegunn/fzf.vim'
+	Plug 'vim-fuzzbox/fuzzbox.vim' " fuzzy search
 call plug#end()
 
 " MAPPINGS ------------------------------------------------------------------
@@ -118,5 +114,7 @@ nnoremap <M-<> :tabmove -1<CR>
 nnoremap <M->> :tabmove +1<CR>
 
 " FUZZY FINDER
-nnoremap <silent> <leader>ff :Files<CR>
-nnoremap <silent> <leader>fb :Buffers<CR>
+nnoremap <silent> <leader>ff :FuzzyFiles<CR>
+nnoremap <silent> <leader>fb :FuzzyBuffers<CR>
+nnoremap <silent> <leader>fg :FuzzyGrep<CR>
+nnoremap <silent> <leader>fs :FuzzyGitFiles<CR>
