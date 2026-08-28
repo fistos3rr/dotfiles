@@ -111,9 +111,11 @@ set listchars+=extends:›,precedes:‹
 set sidescrolloff=10
 set scrolloff=5
 
-nnoremap <M-,> :bp<CR>
-nnoremap <M-.> :bn<CR>
-nnoremap <M-c> :bd<CR>
+nnoremap <M-,> :tabp<CR>
+nnoremap <M-.> :tabn<CR>
+nnoremap <M-c> :tabc<CR>
+nnoremap <M-<> :tabmove -1<CR>
+nnoremap <M->> :tabmove +1<CR>
 
 " FUZZY FINDER
 nnoremap <silent> <leader>ff :Files<CR>
