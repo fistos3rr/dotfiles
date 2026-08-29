@@ -25,7 +25,11 @@ vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 8
 
 -- visual
-vim.opt.guicursor = "n-v-c-i:block"
+ -- cursor
+vim.opt.guicursor = {
+    "n-v-c:block-blinkon0",
+    "i:block-blinkwait200-blinkon200-blinkoff200",
+}
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
