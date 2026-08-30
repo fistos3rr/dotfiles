@@ -38,15 +38,11 @@ zstyle ':vcs_info:*' stagedstr ' +'
 zstyle ':vcs_info:git:*' formats       '(%F{83}%b%f%u%c%m)'
 zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c%m)'
 
-zstyle ':vcs_info:git*+set-message:*' hooks git_is_dirty
-function +vi-git_is_dirty() {
-    if [[ -n $(git status --porcelain 2>/dev/null) ]]; then
+zstyle ':vcs_info:git*+set-message:*' hooks git_status
+function +vi-git_status() {
+    if [[ -n $(git status --porcelain 2>/dev/null) || "${hook_com[staged]}" || "${hook_com[unstaged]}" ]]; then
         hook_com[branch]="%F{196}${hook_com[branch]}%f"
     fi
-}
-
-zstyle ':vcs_info:git*+set-message:*' hooks git_upstream
-function +vi-git_upstream() {
     local upstream=$(git rev-parse --abbrev-ref @{upstream} 2>/dev/null)
     if [[ -n $upstream ]]; then
         local ahead_behind=$(git rev-list --count --left-right @{upstream}...HEAD 2>/dev/null)
