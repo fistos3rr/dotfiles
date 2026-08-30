@@ -35,14 +35,32 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr ' *'
 zstyle ':vcs_info:*' stagedstr ' +'
-zstyle ':vcs_info:git:*' formats       '(%F{83}%b%f%u%c)'
-zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
-zstyle ':vcs_info:git*+set-message:*' hooks git_is_dirty
+zstyle ':vcs_info:git:*' formats       '(%F{83}%b%f%u%c%m)'
+zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c%m)'
 
+zstyle ':vcs_info:git*+set-message:*' hooks git_is_dirty
 function +vi-git_is_dirty() {
     if [[ -n $(git status --porcelain 2>/dev/null) ]]; then
         hook_com[branch]="%F{196}${hook_com[branch]}%f"
     fi
+}
+
+zstyle ':vcs_info:git*+set-message:*' hooks git_upstream
+function +vi-git_upstream() {
+    local upstream=$(git rev-parse --abbrev-ref @{upstream} 2>/dev/null)
+    if [[ -n $upstream ]]; then
+        local ahead_behind=$(git rev-list --count --left-right @{upstream}...HEAD 2>/dev/null)
+        if [[ -n $ahead_behind ]]; then
+            local behind=$(echo $ahead_behind | awk '{print $1}')
+            local ahead=$(echo $ahead_behind | awk '{print $2}')
+            local upstream_info=""
+            (( ahead > 0 || behind > 0 )) && upstream_info+="|"
+            (( ahead > 0 )) && upstream_info+="a${ahead}"
+            (( behind > 0 )) && upstream_info+="b${behind}"
+        fi
+    fi
+
+    hook_com[misc]+="${upstream_info}"
 }
 
 PROMPT=$'\n''%F{green}%n@%m%f:%F{blue}%~%f'$'\n''${vcs_info_msg_0_}%F{165}>%f '
