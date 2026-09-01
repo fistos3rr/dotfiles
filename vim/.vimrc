@@ -51,6 +51,7 @@ set showmode
 set showmatch
 set hlsearch
 set history=100
+set nohlsearch
 
 set wildmenu " auto completion menu using TAB
 set wildmode=list:longest " make wildmenu behave like similar to Bash completion
