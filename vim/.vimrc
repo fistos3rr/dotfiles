@@ -119,3 +119,7 @@ nnoremap <silent> <leader>ff :FuzzyFiles<CR>
 nnoremap <silent> <leader>fb :FuzzyBuffers<CR>
 nnoremap <silent> <leader>fg :FuzzyGrep<CR>
 nnoremap <silent> <leader>fs :FuzzyGitFiles<CR>
+
+" COMMANDS
+command! SudoW :execute 'w !sudo tee % > /dev/null' | edit!
+command! SudoWQ :execute 'w !sudo tee % > /dev/null' | edit! | q
