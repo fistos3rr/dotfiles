@@ -22,12 +22,15 @@ map("n", "<A-.>", ":tabn<CR>", opts)
 map("n", "<A->>", ":tabmove +1<CR>", opts)
 map("n", "<A-<>", ":tabmove -1<CR>", opts)
 map("n", "<A-c>", ":tabc<CR>", opts)
+for i = 1, 9 do
+    map("n", '<A-' .. i .. '>', ':tabnext' .. i .. '<CR>', opts)
+end
 
 -- buffers
---map("n", "<A-k>", ":bp<CR>", opts)
---map("n", "<A-j>", ":bn<CR>", opts)
---map("n", "<A-l>", ":ls<CR>", {noremap=true,})
---map("n", "<A-h>", ":bd<CR>", opts)
+map("n", "<A-k>", ":bp<CR>", opts)
+map("n", "<A-j>", ":bn<CR>", opts)
+map("n", "<A-l>", ":ls<CR>", {noremap=true,})
+map("n", "<A-h>", ":bd<CR>", opts)
 
 -- tabline
 ---- jump

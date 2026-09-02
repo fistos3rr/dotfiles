@@ -113,6 +113,14 @@ nnoremap <M-.> :tabn<CR>
 nnoremap <M-c> :tabc<CR>
 nnoremap <M-<> :tabmove -1<CR>
 nnoremap <M->> :tabmove +1<CR>
+nnoremap <M-1> :tabn 1<CR>
+nnoremap <M-2> :tabn 2<CR>
+nnoremap <M-3> :tabn 3<CR>
+nnoremap <M-4> :tabn 4<CR>
+nnoremap <M-5> :tabn 1<CR>
+nnoremap <M-6> :tabn 2<CR>
+nnoremap <M-7> :tabn 3<CR>
+nnoremap <M-8> :tabn 4<CR>
 
 " FUZZY FINDER------------------------------------------------------------------
 nnoremap <silent> <leader>ff :FuzzyFiles<CR>
