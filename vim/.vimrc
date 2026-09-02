@@ -123,3 +123,24 @@ nnoremap <silent> <leader>fs :FuzzyGitFiles<CR>
 " COMMANDS------------------------------------------------------------------
 command! SudoW :execute 'w !sudo tee % > /dev/null' | edit!
 command! SudoWQ :execute 'w !sudo tee % > /dev/null' | edit! | q
+
+" autocomplete toggle
+let g:complete_normal = &complete
+let g:complete_auto = '.,w,b'
+let g:pumheight_normal = &pumheight
+let g:pumheight_auto = 10
+function! ToggleAutocomplete()
+  if &autocomplete
+    set noautocomplete
+    let &complete = g:complete_normal
+	let &pumheight = g:pumheight_normal
+    echo 'Autocomplete disabled'
+  else
+    set autocomplete
+    let &complete = g:complete_auto
+	let &pumheight = g:pumheight_auto
+    echo 'Autocomplete enabled'
+  endif
+endfunction
+
+command! Autocomplete call ToggleAutocomplete()
