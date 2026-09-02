@@ -7,16 +7,8 @@ set autoindent
 
 syntax on " syntax highlighing
 
-set number
-set relativenumber " add numbers
-
-set cursorline " highlight cursor line
-
-colorscheme delek " default colorscheme
-
 set clipboard=unnamedplus " systemclipboard on linux
 set mouse=a
-
 
 set completeopt=menuone,noinsert,preview
 set updatetime=300
@@ -39,27 +31,40 @@ autocmd FileType javascript,typescript,html setlocal tabstop=2 softtabstop=2 shi
 autocmd FileType javascript,typescript,html setlocal expandtab
 autocmd FileType go setlocal noexpandtab    " Запрещаем замену табов на пробелы
 
-set scrolloff=10
-
 set nobackup " no backup saving
 
 set incsearch " searching
 set ignorecase " ignore capital letters
 set smartcase
-set showcmd
-set showmode
-set showmatch
-set hlsearch
 set history=100
-set nohlsearch
 
 set wildmenu " auto completion menu using TAB
 set wildmode=list:longest " make wildmenu behave like similar to Bash completion
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.img,*.xlsx
 
+" VISUAL------------------------------------------------------------------
+set cursorline " highlight cursor line
+set number
+set relativenumber " add numbers
+
+" cursor
+set guicursor=n-v-c:block-blinkon0,i:block-blinkwait200-blinkon200-blinkoff200
+
+set nohlsearch
+set showcmd
+set showmode
+set showmatch
+set scrolloff=10
+set nowrap
+set listchars+=extends:›,precedes:‹
+set sidescrolloff=10
+set scrolloff=5
+
+colorscheme koehler " default colorscheme
+"colo: delek, koehler
+
 " PLUGINS --------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
-
 "    Plug 'dense-analysis/ale' " async lint engine
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'preservim/nerdtree' " NERDTree 
@@ -103,23 +108,18 @@ set laststatus=2 " show the status on the second to last line
 " Map the F3 key to toggle NERDTree open and close.
 nnoremap <F3> :NERDTreeToggle<cr>
 
-set nowrap
-set listchars+=extends:›,precedes:‹
-set sidescrolloff=10
-set scrolloff=5
-
 nnoremap <M-,> :tabp<CR>
 nnoremap <M-.> :tabn<CR>
 nnoremap <M-c> :tabc<CR>
 nnoremap <M-<> :tabmove -1<CR>
 nnoremap <M->> :tabmove +1<CR>
 
-" FUZZY FINDER
+" FUZZY FINDER------------------------------------------------------------------
 nnoremap <silent> <leader>ff :FuzzyFiles<CR>
 nnoremap <silent> <leader>fb :FuzzyBuffers<CR>
 nnoremap <silent> <leader>fg :FuzzyGrep<CR>
 nnoremap <silent> <leader>fs :FuzzyGitFiles<CR>
 
-" COMMANDS
+" COMMANDS------------------------------------------------------------------
 command! SudoW :execute 'w !sudo tee % > /dev/null' | edit!
 command! SudoWQ :execute 'w !sudo tee % > /dev/null' | edit! | q
