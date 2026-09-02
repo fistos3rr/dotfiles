@@ -129,16 +129,21 @@ let g:complete_normal = &complete
 let g:complete_auto = '.,w,b'
 let g:pumheight_normal = &pumheight
 let g:pumheight_auto = 10
+let g:completeopt_default=&completeopt
+let g:completeopt_auto='menuone,noinsert'
 function! ToggleAutocomplete()
   if &autocomplete
     set noautocomplete
     let &complete = g:complete_normal
 	let &pumheight = g:pumheight_normal
+	let &completeopt = g:completeopt_default
     echo 'Autocomplete disabled'
   else
-    set autocomplete
     let &complete = g:complete_auto
 	let &pumheight = g:pumheight_auto
+	let &completeopt = g:completeopt_auto
+	set autocomplete
+	set completeopt-=noselect
     echo 'Autocomplete enabled'
   endif
 endfunction
