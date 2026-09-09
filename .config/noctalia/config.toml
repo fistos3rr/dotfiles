@@ -1,0 +1,18 @@
+[theme]
+builtin = "Noctalia"
+community_palette = "Gruvbox Material Hard"
+mode = "dark"
+source = "community"
+wallpaper_scheme = "m3-monochrome"
+
+    [theme.templates]
+    builtin_ids = [ "kitty" ]
+
+[shell]
+screen_time_enabled = true
+
+    [shell.panel]
+    launcher_position = "auto"
+
+[weather]
+enabled = false

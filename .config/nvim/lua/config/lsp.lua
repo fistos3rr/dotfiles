@@ -3,10 +3,10 @@ require('mason').setup()
 -- use this to install tools
 require('mason-tool-installer').setup({
 	ensure_installed = {
-		'lua_ls',
-    'ts_ls',
-    'ty',
-    'gopls'
+--		'lua_ls',
+--    'ts_ls',
+--    'ty',
+--    'gopls'
 	},
 })
 

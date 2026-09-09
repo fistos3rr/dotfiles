@@ -66,7 +66,7 @@ colorscheme koehler " default colorscheme
 " PLUGINS --------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 "    Plug 'dense-analysis/ale' " async lint engine
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"	Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'preservim/nerdtree' " NERDTree 
     Plug 'jiangmiao/auto-pairs'
     Plug 'Vimjas/vim-python-pep8-indent'
@@ -88,6 +88,12 @@ nnoremap <Leader>p "+p
 xnoremap <Leader>p "+p
 nnoremap <Leader>y "+y
 xnoremap <Leader>y "+y
+if executable('wl-copy') && executable('wl-paste')
+    nnoremap <Leader>y :call system('wl-copy', getline('.'))<CR>
+    xnoremap <Leader>y :<C-U>call system('wl-copy', getline("'<","'>"))<CR>
+    nnoremap <Leader>p :read !wl-paste<CR>
+    xnoremap <Leader>p c<C-R>=system('wl-paste')<CR><Esc>
+endif
 
 " Resize split windows using arrow keys by pressing:
 " CTRL+UP, CTRL+DOWN, CTRL+LEFT, or CTRL+RIGHT.
