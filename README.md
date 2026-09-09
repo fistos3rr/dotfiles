@@ -1,7 +1,7 @@
 # Linux Dotfiles
 
-# Hyprland+Noctalia ecosystem guide
-## Installation guide (FULL)
+## Hyprland+Noctalia ecosystem guide
+### Installation guide (FULL)
 - Install **git**
 - Get dotfiles
 ```
