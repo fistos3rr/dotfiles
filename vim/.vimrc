@@ -27,8 +27,8 @@ set softtabstop=4
 set expandtab
 
 " filetype specific tabs
-autocmd FileType javascript,typescript,html setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd FileType javascript,typescript,html setlocal expandtab
+autocmd FileType javascriptreact,typescriptreact,javascript,typescript,html,json setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType javascriptreact,typescriptreact,javascript,typescript,html,json setlocal expandtab
 autocmd FileType go setlocal noexpandtab    " Запрещаем замену табов на пробелы
 
 set nobackup " no backup saving
@@ -67,13 +67,18 @@ colorscheme koehler " default colorscheme
 call plug#begin('~/.vim/plugged')
 "    Plug 'dense-analysis/ale' " async lint engine
 "	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'alvan/vim-closetag' " html autoclose brackets
     Plug 'preservim/nerdtree' " NERDTree 
     Plug 'jiangmiao/auto-pairs'
     Plug 'Vimjas/vim-python-pep8-indent'
 	Plug 'vim-fuzzbox/fuzzbox.vim' " fuzzy search
 call plug#end()
 
-" MAPPINGS ------------------------------------------------------------------
+" PLUGINS CONFIG -------------------------------------------------------------
+let g:closetag_filenames = '*.html,*.js,*.jsx,*.ts,*.tsx'
+let NERDTreeShowHidden=1
+
+" MAPPINGS -------------------------------------------------------------------
 let mapleader = "\<Space>"
 
 " You can split the window in Vim by typing :split or :vsplit.
